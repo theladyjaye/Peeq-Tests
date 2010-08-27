@@ -149,7 +149,7 @@ $n15->label = "Requires client approval";
 $n15->description = "lorem ipsum dolor sit amet";
 
 $n16 = new YSSNote();
-$n16->label = "Requires client approval";
+$n16->label = "Zoo-We-Mama!";
 $n16->description = "lorem ipsum dolor sit amet";
 
 $n17 = new YSSNote();
