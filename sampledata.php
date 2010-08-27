@@ -95,28 +95,33 @@ $v1->addState($s1);
 $v2->addState($s2);
 $v3->addState($s3);
 
-$a1          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/resources/img/fpo-comp-thumb.jpg', $session->currentUser->domain);
+$a1          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/img/980x1200_brown.png', $session->currentUser->domain);
 $a1->label   = "Lorem ipsum dolor sit amet";
 $a1->_id     = $s1->_id.'/attachment/representation';
 
-$a2          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/resources/img/fpo-comp-thumb.jpg', $session->currentUser->domain);
+$a2          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/img/980x600_blue.png', $session->currentUser->domain);
 $a2->label   = "Lorem ipsum dolor sit amet";
 $a2->_id     = $s2->_id.'/attachment/representation';
 
-$a3          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/resources/img/fpo-comp-thumb.jpg', $session->currentUser->domain);
+$a3          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/img/980x1200_brown.png', $session->currentUser->domain);
 $a3->label   = "Lorem ipsum dolor sit amet";
 $a3->_id     = $s3->_id.'/attachment/representation';
 
 
-$a4          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/resources/img/fpo-comp-thumb.jpg', $session->currentUser->domain);
+$a4          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/documents/technicalSpec.pdf', $session->currentUser->domain);
 $a4->label   = "Lorem ipsum dolor sit amet";
 $a4->_id     = $p1->_id.'/attachment/technical-spec';
+
+$a5          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/documents/functional spec.pdf', $session->currentUser->domain);
+$a5->label   = "Lorem ipsum dolor sit amet";
+$a5->_id     = $p1->_id.'/attachment/functional-spec';
 
 
 $s1->addAttachment($a1);
 $s2->addAttachment($a2);
 $s3->addAttachment($a3);
 $p1->addAttachment($a4);
+$p1->addAttachment($a5);
 
 $s1->addAnnotation($t1);
 $s1->addAnnotation($t2);
