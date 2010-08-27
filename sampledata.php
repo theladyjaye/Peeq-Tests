@@ -1,14 +1,14 @@
 <?php
-require 'application/system/YSSEnvironment.php';
-require 'application/system/YSSSecurity.php';
-require 'application/data/YSSDomain.php';
-require 'application/data/YSSCouchObject.php';
-require 'application/data/YSSProject.php';
-require 'application/data/YSSView.php';
-require 'application/data/YSSState.php';
-require 'application/data/YSSAnnotation.php';
-require 'application/data/YSSTask.php';
-require 'application/data/YSSAttachment.php';
+require '../application/system/YSSEnvironment.php';
+require '../application/system/YSSSecurity.php';
+require '../application/data/YSSDomain.php';
+require '../application/data/YSSCouchObject.php';
+require '../application/data/YSSProject.php';
+require '../application/data/YSSView.php';
+require '../application/data/YSSState.php';
+require '../application/data/YSSAnnotation.php';
+require '../application/data/YSSTask.php';
+require '../application/data/YSSAttachment.php';
 
 if(AWS_S3_ENABLED) require 'Zend/Service/Amazon/S3.php';
 
