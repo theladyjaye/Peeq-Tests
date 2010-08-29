@@ -65,6 +65,11 @@ $s3->label       = "default";
 $s3->description = "default state";
 $s3->_id         = "default";
 
+$s4 = new YSSState();
+$s4->label       = "recover password";
+$s4->description = "recover password view augmentation";
+$s4->_id         = "recover-password";
+
 
 // Tasks
 $t1 = new YSSTask();
@@ -72,6 +77,8 @@ $t1->label = "Implement API endpoints";
 $t1->description = "lorem ipsum dolor sit amet";
 $t1->context = "server";
 $t1->status = YSSTask::kStatusIncomplete;
+$t1->x = 300;
+$t1->y = 434;
 
 $t2 = new YSSTask();
 $t2->label = "Handle filesystem IO for attachments";
@@ -295,8 +302,11 @@ $p1->addView($v2);
 $p2->addView($v3);
 
 $v1->addState($s1);
+$v1->addState($s4);
 $v2->addState($s2);
 $v3->addState($s3);
+
+// Attachments
 
 $a1          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/img/980x1200_brown.png', $session->currentUser->domain);
 $a1->label   = "Lorem ipsum dolor sit amet";
@@ -310,7 +320,6 @@ $a3          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::ba
 $a3->label   = "Lorem ipsum dolor sit amet";
 $a3->_id     = $s3->_id.'/attachment/representation';
 
-
 $a4          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/documents/technicalSpec.pdf', $session->currentUser->domain);
 $a4->label   = "Lorem ipsum dolor sit amet";
 $a4->_id     = $p1->_id.'/attachment/technical-spec';
@@ -319,12 +328,19 @@ $a5          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::ba
 $a5->label   = "Lorem ipsum dolor sit amet";
 $a5->_id     = $p1->_id.'/attachment/functional-spec';
 
+$a6          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/img/980x600_blue.png', $session->currentUser->domain);
+$a6->label   = "Lorem ipsum dolor sit amet";
+$a6->_id     = $s4->_id.'/attachment/representation';
+
 
 $s1->addAttachment($a1);
 $s2->addAttachment($a2);
 $s3->addAttachment($a3);
+$s4->addAttachment($a6);
+
 $p1->addAttachment($a4);
 $p1->addAttachment($a5);
+
 
 // Add Tasks
 $s1->addAnnotation($t1);
@@ -371,8 +387,6 @@ $s3->addAnnotation($n17);
 $s3->addAnnotation($n18);
 $s3->addAnnotation($n19);
 $s3->addAnnotation($n20);
-
-
 
 
 $p3->save();
