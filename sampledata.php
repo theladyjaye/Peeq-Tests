@@ -49,11 +49,6 @@ $v3->label       = "Homepage";
 $v3->description = "The homepage";
 $v3->_id         = "homepage";
 
-$v4 = new YSSView();
-$v4->label       = "No Attachment Page";
-$v4->description = "No attachment";
-$v4->_id         = "no-attachment-page";
-
 
 // States - we make new objects, because once one is saved, it will get an _id and a _rev and we don't want to reuse those dudes
 $s1 = new YSSState();
@@ -387,12 +382,10 @@ $n20->y = 60;
 
 $p1->addView($v1);
 $p1->addView($v2);
-$p1->addView($v4);
 $p2->addView($v3);
 
 $v1->addState($s1);
 $v1->addState($s4);
-$v4->addState($s5);
 $v2->addState($s2);
 $v3->addState($s3);
 
