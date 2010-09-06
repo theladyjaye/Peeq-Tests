@@ -80,23 +80,30 @@ $s5->_id         = "no-attachment";
 $t1 = new YSSTask();
 $t1->label = "Implement API endpoints";
 $t1->description = "lorem ipsum dolor sit amet";
-$t1->context = "server";
-$t1->status = YSSTask::kStatusIncomplete;
-$t1->x = 0;
-$t1->y = 0;
+$t1->context = "Flash";
+$t1->status = YSSTask::kStatusComplete;
+$t1->x = 0.34;
+$t1->y = 0.4;
 $t1->width = 100;
 $t1->height = 100;
+$t1->estimate = "2.5 days";
+$t1->priority = 1;
+$t1->assigned_to = "alincoln";
 
 $t2 = new YSSTask();
 $t2->label = "Handle filesystem IO for attachments";
 $t2->description = "lorem ipsum dolor sit amet";
 $t2->context = "server";
 $t2->status = YSSTask::kStatusIncomplete;
-$t2->x = 20;
-$t2->y = 0;
+$t2->x = 0.93;
+$t2->y = 0.65;
 $t2->width = 100;
 $t2->height = 100;
+$t2->estimate = "3 weeks";
+$t2->priority = 0;
+$t2->assigned_to = "alincoln";
 
+/*
 $t3 = new YSSTask();
 $t3->label = "Bark!";
 $t3->description = "lorem ipsum dolor sit amet";
@@ -457,7 +464,7 @@ $n20->x = 160;
 $n20->y = 60;
 $n20->width = 100;
 $n20->height = 100;
-
+*/
 
 
 $p1->addView($v1);
@@ -508,6 +515,7 @@ $p1->addAttachment($a5);
 // Add Tasks
 $s1->addAnnotation($t1);
 $s1->addAnnotation($t2);
+/*
 $s1->addAnnotation($t3);
 $s1->addAnnotation($t4);
 $s1->addAnnotation($t5);
@@ -518,7 +526,6 @@ $s1->addAnnotation($t9);
 $s1->addAnnotation($t10);
 $s1->addAnnotation($t11);
 $s1->addAnnotation($t12);
-
 $s3->addAnnotation($t13);
 $s3->addAnnotation($t14);
 $s3->addAnnotation($t15);
@@ -527,8 +534,10 @@ $s3->addAnnotation($t17);
 $s3->addAnnotation($t18);
 $s3->addAnnotation($t19);
 $s3->addAnnotation($t20);
+*/
 
 // Add Notes
+/*
 $s1->addAnnotation($n1);
 $s1->addAnnotation($n2);
 $s1->addAnnotation($n3);
@@ -550,7 +559,7 @@ $s3->addAnnotation($n17);
 $s3->addAnnotation($n18);
 $s3->addAnnotation($n19);
 $s3->addAnnotation($n20);
-
+*/
 
 $p3->save();
 ?>
