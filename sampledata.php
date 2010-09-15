@@ -10,7 +10,6 @@ require '../application/data/YSSAnnotation.php';
 require '../application/data/YSSTask.php';
 require '../application/data/YSSNote.php';
 require '../application/data/YSSAttachment.php';
-require '../application/data/YSSTaskGroup.php';
 
 if(AWS_S3_ENABLED) require 'Zend/Service/Amazon/S3.php';
 
@@ -83,40 +82,40 @@ $t1->label = "Implement API endpoints";
 $t1->description = "lorem ipsum dolor sit amet";
 $t1->context = "server";
 $t1->status = YSSTask::kStatusIncomplete;
-$t1->x = 240;
-$t1->y = 100;
+$t1->x = 0;
+$t1->y = 0;
 
 $t2 = new YSSTask();
 $t2->label = "Handle filesystem IO for attachments";
 $t2->description = "lorem ipsum dolor sit amet";
 $t2->context = "server";
-$t2->status = YSSTask::kStatusComplete;
+$t2->status = YSSTask::kStatusIncomplete;
 $t2->x = 20;
-$t2->y = 50;
+$t2->y = 0;
 
 $t3 = new YSSTask();
 $t3->label = "Bark!";
 $t3->description = "lorem ipsum dolor sit amet";
 $t3->context = "css";
 $t3->status = YSSTask::kStatusComplete;
-$t3->x = 500;
-$t3->y = 400;
+$t3->x = 40;
+$t3->y = 0;
 
 $t4 = new YSSTask();
 $t4->label = "Image Gallery";
 $t4->description = "lorem ipsum dolor sit amet";
 $t4->context = "html";
 $t4->status = YSSTask::kStatusComplete;
-$t4->x = 600;
-$t4->y = 600;
+$t4->x = 60;
+$t4->y = 0;
 
 $t5 = new YSSTask();
 $t5->label = "Notification headers";
 $t5->description = "Lorem ipsum dolor sit amet.";
 $t5->context = "html";
 $t5->status = YSSTask::kStatusComplete;
-$t5->x = 450;
-$t5->y = 100;
+$t5->x = 80;
+$t5->y = 0;
 
 $t6 = new YSSTask();
 $t6->label = "Javascript scroll action";
@@ -124,39 +123,39 @@ $t6->description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, se
 $t6->context = "javascript";
 $t6->status = YSSTask::kStatusIncomplete;
 $t6->x = 100;
-$t6->y = 200;
+$t6->y = 0;
 
 $t7 = new YSSTask();
 $t7->label = "Dynamic Filtering";
 $t7->description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 $t7->context = "javascript";
-$t7->status = YSSTask::kStatusIncomplete;
+$t7->status = YSSTask::kStatusComplete;
 $t7->x = 120;
-$t7->y = 90;
+$t7->y = 0;
 
 $t8 = new YSSTask();
 $t8->label = "Attempt to get anyone to use it";
 $t8->description = "Lorem ipsum dolor sit amet.";
 $t8->context = "silverlight";
-$t8->status = YSSTask::kStatusComplete;
+$t8->status = YSSTask::kStatusIncomplete;
 $t8->x = 140;
-$t8->y = 700;
+$t8->y = 0;
 
 $t9 = new YSSTask();
 $t9->label = "Sidebar Promos";
 $t9->description = "Lorem ipsum dolor sit amet.";
 $t9->context = "html";
 $t9->status = YSSTask::kStatusIncomplete;
-$t9->x = 960;
-$t9->y = 1000;
+$t9->x = 160;
+$t9->y = 0;
 
 $t10 = new YSSTask();
 $t10->label = "Landing page markup";
 $t10->description = "Lorem ipsum dolor sit amet.";
 $t10->context = "html";
-$t10->status = YSSTask::kStatusComplete;
+$t10->status = YSSTask::kStatusIncomplete;
 $t10->x = 180;
-$t10->y = 320;
+$t10->y = 0;
 
 $t11 = new YSSTask();
 $t11->label = "Ajax calls to API";
@@ -164,63 +163,63 @@ $t11->description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s
 $t11->context = "javascript";
 $t11->status = YSSTask::kStatusIncomplete;
 $t11->x = 200;
-$t11->y = 366;
+$t11->y = 0;
 
 $t12 = new YSSTask();
 $t12->label = "Make someone care about it";
 $t12->description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.";
 $t12->context = "silverlight";
-$t12->status = YSSTask::kStatusComplete;
-$t12->x = 257;
-$t12->y = 770;
+$t12->status = YSSTask::kStatusIncomplete;
+$t12->x = 0;
+$t12->y = 20;
 
 $t13 = new YSSTask();
 $t13->label = "Lightbox modals";
 $t13->description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.";
 $t13->context = "javascript";
-$t13->status = YSSTask::kStatusIncomplete;
-$t13->x = 770;
-$t13->y = 450;
+$t13->status = YSSTask::kStatusComplete;
+$t13->x = 20;
+$t13->y = 20;
 
 $t14 = new YSSTask();
 $t14->label = "News markup";
 $t14->description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.";
 $t14->context = "html";
 $t14->status = YSSTask::kStatusIncomplete;
-$t14->x = 126;
-$t14->y = 589;
+$t14->x = 40;
+$t14->y = 20;
 
 $t15 = new YSSTask();
 $t15->label = "Features markup";
 $t15->description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.";
 $t15->context = "html";
-$t15->status = YSSTask::kStatusComplete;
-$t15->x = 123;
-$t15->y = 244;
+$t15->status = YSSTask::kStatusIncomplete;
+$t15->x = 60;
+$t15->y = 20;
 
 $t16 = new YSSTask();
 $t16->label = "Audio and Video players";
 $t16->description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.";
 $t16->context = "html";
 $t16->status = YSSTask::kStatusIncomplete;
-$t16->x = 653;
-$t16->y = 111;
+$t16->x = 80;
+$t16->y = 20;
 
 $t17 = new YSSTask();
 $t17->label = "Implement hero carousel";
 $t17->description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.";
 $t17->context = "flash";
 $t17->status = YSSTask::kStatusComplete;
-$t17->x = 611;
-$t17->y = 611;
+$t17->x = 100;
+$t17->y = 20;
 
 $t18 = new YSSTask();
 $t18->label = "Implement deeplinking";
 $t18->description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.";
 $t18->context = "flash";
 $t18->status = YSSTask::kStatusIncomplete;
-$t18->x = 541;
-$t18->y = 936;
+$t18->x = 120;
+$t18->y = 20;
 
 $t19 = new YSSTask();
 $t19->label = "Implement tracking";
@@ -228,15 +227,15 @@ $t19->description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, s
 $t19->context = "flash";
 $t19->status = YSSTask::kStatusComplete;
 $t19->x = 140;
-$t19->y = 789;
+$t19->y = 20;
 
 $t20 = new YSSTask();
 $t20->label = "Complete carousel";
 $t20->description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.";
 $t20->context = "flash";
 $t20->status = YSSTask::kStatusIncomplete;
-$t20->x = 666;
-$t20->y = 875;
+$t20->x = 160;
+$t20->y = 20;
 
 // Notes
 $n1 = new YSSNote();
@@ -435,11 +434,10 @@ $s1->addAnnotation($t5);
 $s1->addAnnotation($t6);
 $s1->addAnnotation($t7);
 $s1->addAnnotation($t8);
-
-$s2->addAnnotation($t9);
-$s2->addAnnotation($t10);
-$s2->addAnnotation($t11);
-$s2->addAnnotation($t12);
+$s1->addAnnotation($t9);
+$s1->addAnnotation($t10);
+$s1->addAnnotation($t11);
+$s1->addAnnotation($t12);
 
 $s3->addAnnotation($t13);
 $s3->addAnnotation($t14);
@@ -459,11 +457,10 @@ $s1->addAnnotation($n5);
 $s1->addAnnotation($n6);
 $s1->addAnnotation($n7);
 $s1->addAnnotation($n8);
-
-$s2->addAnnotation($n9);
-$s2->addAnnotation($n10);
-$s2->addAnnotation($n11);
-$s2->addAnnotation($n12);
+$s1->addAnnotation($n9);
+$s1->addAnnotation($n10);
+$s1->addAnnotation($n11);
+$s1->addAnnotation($n12);
 
 $s3->addAnnotation($n13);
 $s3->addAnnotation($n14);
@@ -473,17 +470,6 @@ $s3->addAnnotation($n17);
 $s3->addAnnotation($n18);
 $s3->addAnnotation($n19);
 $s3->addAnnotation($n20);
-
-
-$g1 = YSSTaskGroup::groupWithProject($p1);
-$g1->label = "News items";
-$g1->addTask($t1);
-$g1->save();
-
-$g2 = YSSTaskGroup::groupWithProject($p2);
-$g2->label = "Special items";
-$g2->addTask($t13);
-$g2->save();
 
 
 $p3->save();
