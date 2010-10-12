@@ -14,9 +14,11 @@ require '../application/data/YSSTaskGroup.php';
 
 if(AWS_S3_ENABLED) require 'Zend/Service/Amazon/S3.php';
 
+$domain = 'peeq';
+
 $session  = YSSSession::sharedSession();
-YSSDomain::delete($session->currentUser->domain);
-YSSDomain::create($session->currentUser->domain);
+YSSDomain::delete($domain);
+YSSDomain::create($domain);
 
 // Projects
 $p1 = new YSSProject();
@@ -204,7 +206,7 @@ $t12->x = 0;
 $t12->y = 20;
 $t12->width = 100;
 $t12->height = 100;
-
+*/
 $t13 = new YSSTask();
 $t13->label = "Lightbox modals";
 $t13->description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.";
@@ -214,7 +216,7 @@ $t13->x = 20;
 $t13->y = 20;
 $t13->width = 100;
 $t13->height = 100;
-
+/*
 $t14 = new YSSTask();
 $t14->label = "News markup";
 $t14->description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.";
@@ -479,27 +481,27 @@ $v3->addState($s3);
 
 // Attachments
 
-$a1          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/img/980x1200_brown.png', $session->currentUser->domain);
+$a1          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/img/980x1200_brown.png', $domain);
 $a1->label   = "Brown Represenation a1";
 $a1->_id     = $s1->_id.'/attachment/representation';
 
-$a2          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/img/980x600_blue.png', $session->currentUser->domain);
+$a2          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/img/980x600_blue.png', $domain);
 $a2->label   = "Blue Representation a2";
 $a2->_id     = $s2->_id.'/attachment/representation';
 
-$a3          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/img/980x1200_brown.png', $session->currentUser->domain);
+$a3          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/img/980x1200_brown.png', $domain);
 $a3->label   = "Brown Representation a3";
 $a3->_id     = $s3->_id.'/attachment/representation';
 
-$a4          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/documents/technicalSpec.pdf', $session->currentUser->domain);
+$a4          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/documents/technicalSpec.pdf', $domain);
 $a4->label   = "Technical Spec";
 $a4->_id     = $p1->_id.'/attachment/technical-spec';
 
-$a5          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/documents/functional spec.pdf', $session->currentUser->domain);
+$a5          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/documents/functional spec.pdf', $domain);
 $a5->label   = "Functional Spec";
 $a5->_id     = $p1->_id.'/attachment/functional-spec';
 
-$a6          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/img/980x600_blue.png', $session->currentUser->domain);
+$a6          = YSSAttachment::attachmentWithLocalFileInDomain(YSSApplication::basePath().'/tests/resources/img/980x600_blue.png', $domain);
 $a6->label   = "Blue Representation a6";
 $a6->_id     = $s4->_id.'/attachment/representation';
 
@@ -527,7 +529,9 @@ $s1->addAnnotation($t9);
 $s1->addAnnotation($t10);
 $s1->addAnnotation($t11);
 $s1->addAnnotation($t12);
+*/
 $s3->addAnnotation($t13);
+/*
 $s3->addAnnotation($t14);
 $s3->addAnnotation($t15);
 $s3->addAnnotation($t16);
@@ -568,12 +572,12 @@ $g1->label = "News Items";
 $g1->addTask($t1);
 $g1->save();
 
-/*
+
 $g2 = YSSTaskGroup::groupWithProject($p2);
 $g2->label = "Special Items";
 $g2->addTask($t13);
 $g2->save();
-*/
+
 
 $p3->save();
 ?>
