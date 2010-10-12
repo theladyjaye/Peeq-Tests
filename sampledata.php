@@ -12,13 +12,68 @@ require '../application/data/YSSNote.php';
 require '../application/data/YSSAttachment.php';
 require '../application/data/YSSTaskGroup.php';
 
+require '../application/libs/axismundi/data/AMQuery.php';
+require '../application/data/YSSUser.php';
+require '../application/data/YSSCompany.php';
+
 if(AWS_S3_ENABLED) require 'Zend/Service/Amazon/S3.php';
 
 $domain = 'peeq';
 
 $session  = YSSSession::sharedSession();
+
+// multi_query was causing issues, so went back to sequential queries.
+// since it's just the sample data load, not really interested in performance.
+
+$sql_database = YSSDatabase::connection(YSSDatabase::kSql);
+$sql_database->query('TRUNCATE company');
+$sql_database->query('TRUNCATE company_user');
+$sql_database->query('TRUNCATE user');
+$sql_database->query('TRUNCATE user_verification');
+
+$sql_database = null;
+$query        = null;
+
+
+// create the company
+$company            = new YSSCompany();
+$company->name      = 'Peeq';
+$company->domain    = $domain;
+$company            = $company->save();
+
+
+// create the users
+$user1               = new YSSUser();
+$user1->domain       = $domain;
+$user1->username     = 'philtobias';
+$user1->email        = 'philtobias@gmail.com';
+$user1->firstname    = 'Phil';
+$user1->lastname     = 'Tobias'; 
+$user1->level        = YSSUserLevel::kAdministrator;
+$user1->password     = YSSUser::passwordWithStringAndDomain('12345', $domain);
+$user1->active       = 1;
+
+$user2               = new YSSUser();
+$user2->domain       = $domain;
+$user2->username     = 'aventurella';
+$user2->email        = 'aventurella@gmail.com';
+$user2->firstname    = 'Adam';
+$user2->lastname     = 'Venturella'; 
+$user2->level        = YSSUserLevel::kAdministrator;
+$user2->password     = YSSUser::passwordWithStringAndDomain('12345', $domain);
+$user2->active       = 1;
+
+
+$user1               = $user1->save();
+$user2               = $user2->save();
+
+$company->addUser($user1);
+$company->addUser($user2);
+
+// create the CouchDB Domain
 YSSDomain::delete($domain);
 YSSDomain::create($domain);
+
 
 // Projects
 $p1 = new YSSProject();
